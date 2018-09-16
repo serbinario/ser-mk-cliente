@@ -61,9 +61,13 @@
                         </div>
                     @endif
 
+                    <img src="/img/logo.png" class="img-responsive center-block width-3" alt="Responsive image">
+                    <div class="span12 text-center">
 
-                    <span class="text-lg text-bold text-info">Netstart - Central de Atendimento</span>
-                    <br/><br/>
+                        <span class="text-lg text-bold text-center text-info">Netstart - Central de Atendimento</span>
+
+                    </div>
+                    
                     <form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
@@ -90,6 +94,7 @@
                                 <button class="btn btn-danger btn-raised btn-block" type="submit">Login</button>
                             </div><!--end .col -->
                         </div><!--end .row -->
+
                     </form>
                 </div><!--end .col -->
             </div><!--end .card -->

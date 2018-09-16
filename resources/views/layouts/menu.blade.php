@@ -54,7 +54,7 @@
 						<li class="header-nav-brand" >
 							<div class="brand-holder">
 								<a href="../../html/dashboards/dashboard.html">
-									<span class="text-lg text-bold text-primary">NETSTART</span>
+									<span class="text-lg text-bold text-danger">NETSTART</span>
 								</a>
 							</div>
 						</li>
@@ -78,7 +78,7 @@
 							</a>
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">Config</li>
-								<li><a href="../../html/pages/profile.html">Meus Dados</a></li>
+								<li><a href="{{ route('meusDados') }}">Meus Dados</a></li>
 								<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 									{{ csrf_field() }}
@@ -148,7 +148,7 @@
 
 							<ul>
 								<li><a href="{{ route('index') }}" class="active"><span class="title">Últimas Faturas</span></a></li>
-								<li><a href="{{ route('meusDados') }}" class="active"><span class="title">Fatura aberta</span></a></li>
+								<li><a href="{{ route('meusDados') }}" class="active"><span class="title">Meus Dados</span></a></li>
 
 							</ul><!--end /submenu -->
 						</li><!--end /menu-li -->

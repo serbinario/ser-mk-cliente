@@ -55,7 +55,7 @@
 
 
 
-                    <span class="text-lg text-bold text-primary">Netstart - Central de Atendimento</span>
+                    <span class="text-lg text-bold text-info">Netstart - Central de Atendimento</span>
                     <br/><br/>
                     <form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="POST">
                         {{ csrf_field() }}
@@ -80,7 +80,7 @@
                         <br/>
                         <div class="row">
                             <div class="col-xs-12 text-right">
-                                <button class="btn btn-primary btn-raised btn-block" type="submit">Login</button>
+                                <button class="btn btn-danger btn-raised btn-block" type="submit">Login</button>
                             </div><!--end .col -->
                         </div><!--end .row -->
                     </form>

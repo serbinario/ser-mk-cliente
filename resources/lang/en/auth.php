@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
+    'failed' => 'Caro Cliente. Seu login ou senha estão inválidos, entre em contato com a suporte da Netstart',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];

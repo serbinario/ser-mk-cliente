@@ -17,9 +17,6 @@ Auth::routes();
 Route::get('/', 'DebitosController@index')
     ->name('index');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::any('/notificationUrl', 'NotificationUrl@notificationUrl')->name('notificationUrl');
 
 //Route::any('/enableDisableSecret', 'NotificationUrl@notificationUrl')->name('notificationUrl');
 

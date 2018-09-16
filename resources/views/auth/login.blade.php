@@ -40,7 +40,6 @@
 
                         </div>
                     @endif
-
                     @if(Session::has('error_message'))
                         <div class="alert alert-success">
                             <span class="glyphicon glyphicon-ok"></span>
@@ -53,6 +52,14 @@
                         </div>
                     @endif
 
+                    @if(Session::has('errors'))
+                        <div class="alert alert-danger">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            @foreach($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                        </div>
+                    @endif
 
 
                     <span class="text-lg text-bold text-info">Netstart - Central de Atendimento</span>

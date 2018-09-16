@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="your,keywords">
     <meta name="description" content="Short explanation about this website">
+    <link rel="shortcut icon" href="img/icon.ico" />
 
     <!-- BEGIN STYLESHEETS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
@@ -67,7 +68,7 @@
                         <span class="text-lg text-bold text-center text-info">Netstart - Central de Atendimento</span>
 
                     </div>
-                    
+
                     <form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">

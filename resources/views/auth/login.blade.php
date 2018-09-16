@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Material Admin - Blank page</title>
+    <title>Central do Assinante</title>
 
     <!-- BEGIN META -->
     <meta charset="utf-8">
@@ -28,13 +28,40 @@
             <div class="row">
                 <div class="col-sm-6">
                     <br/>
-                    <span class="text-lg text-bold text-primary">SISTEMA DE CONTRATOS</span>
+
+                    @if(Session::has('success_message'))
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!! session('success_message') !!}
+
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+                    @endif
+
+                    @if(Session::has('error_message'))
+                        <div class="alert alert-success">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            {!! session('error_message') !!}
+
+                            <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                        </div>
+                    @endif
+
+
+
+                    <span class="text-lg text-bold text-primary">Netstart - Central de Atendimento</span>
                     <br/><br/>
                     <form class="form floating-label" action="{{ route('login') }}" accept-charset="utf-8" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email">
-                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="login" name="login">
+                            <label for="login">Login</label>
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -43,7 +70,7 @@
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" id="password" name="password">
-                            <label for="password">Password</label>
+                            <label for="password">CPF/CNPJ</label>
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -66,6 +93,7 @@
 
 <script src="{{ asset('/assets/js/libs/jquery/jquery-1.11.2.min.js')}}" type="text/javascript"></script>
 <script src="{{ asset('/assets/js/core/source/AppForm.js')}}" type="text/javascript"></script>
+<script src="{{ asset('/js/cliente/mascaras.js')}}" type="text/javascript"></script>
 
 
 

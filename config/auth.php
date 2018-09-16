@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'customusers',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'customusers',
         ],
 
         'api' => [
@@ -69,12 +69,13 @@ return [
             'driver' => 'eloquent',
             'model' => Serbinario\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'customusers' => [
+            'driver' => 'eloquent',
+            'model' => Serbinario\Entities\Cliente::class,
+        ],
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------
@@ -97,6 +98,12 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
+    ],
+
+    'customusers' => [
+        'provider' => 'customusers',
+        'table' => 'password_resets',
+        'expire' => 60,
     ],
 
 ];

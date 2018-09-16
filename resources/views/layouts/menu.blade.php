@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Material Admin - Blank page</title>
+		<title>Netstart - Provedor de Internet</title>
 
 		<!-- BEGIN META -->
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keywords" content="your,keywords">
-		<meta name="description" content="Short explanation about this website">
+		<meta name="keywords" content="Provedor,Internet, igarassu, fibra, otica, fibra otica">
+		<meta name="description" content="Netstart, o Primeiro provedor de internet de Igarassu">
 
 		<!-- BEGIN STYLESHEETS -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
@@ -54,7 +54,7 @@
 						<li class="header-nav-brand" >
 							<div class="brand-holder">
 								<a href="../../html/dashboards/dashboard.html">
-									<span class="text-lg text-bold text-primary">CONTRATOS</span>
+									<span class="text-lg text-bold text-primary">NETSTART</span>
 								</a>
 							</div>
 						</li>
@@ -72,17 +72,13 @@
 							<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
 								<img src="" alt="" />
 								<span class="profile-info">
-									{{ Auth::user()->name }}
-									<small>Administrator</small>
+									{{ Auth::user()->nome }}
+									<small>Login</small>
 								</span>
 							</a>
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">Config</li>
-								<li><a href="../../html/pages/profile.html">My profile</a></li>
-								<li><a href="../../html/pages/blog/post.html">My blog <span class="badge style-danger pull-right">16</span></a></li>
-								<li><a href="../../html/pages/calendar.html">My appointments</a></li>
-								<li class="divider"></li>
-								<li><a href="../../html/pages/locked.html"><i class="fa fa-fw fa-lock"></i> Lock</a></li>
+								<li><a href="../../html/pages/profile.html">Meus Dados</a></li>
 								<li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 									{{ csrf_field() }}
@@ -133,63 +129,27 @@
 					</div>
 					<div class="expanded">
 						<a href="../../html/dashboards/dashboard.html">
-							<span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+							<span class="text-lg text-bold text-primary ">NETSTART</span>
 						</a>
 					</div>
 				</div>
-
-
-
 				<div class="menubar-scroll-panel">
-
-
-
 					<!-- BEGIN MAIN MENU -->
 					<ul id="main-menu" class="gui-controls">
-
-						<!-- BEGIN DASHBOARD -->
-						<li>
-							<a href="{{ route('dashboard.index') }}" >
-								<div class="gui-icon"><i class="md md-home"></i></div>
-								<span class="title">Dashboard</span>
-							</a>
-						</li><!--end /menu-li -->
-						<!-- END DASHBOARD -->
-
-
-						<!-- BEGIN DASHBOARD -->
-						<!-- END DASHBOARD -->
 
 
 						<!-- BEGIN PAGES -->
 						<li class="gui-folder">
 							<a>
 								<div class="gui-icon"><i class="md md-computer"></i></div>
-								<span class="title">IP</span>
+								<span class="title"></span>
 							</a>
 							<!--start submenu -->
 
 							<ul>
-								<li><a href="{{ route('cliente.cliente.index') }}" class="active"><span class="title">Cliente</span></a></li>
-								<li><a href="{{ route('pool.pool.index') }}" class="active"><span class="title">Pool</span></a></li>
-								<li><a href="{{ route('router.router.index') }}" class="active"><span class="title">Routers</span></a></li>
-								<li><a href="{{ route('profile.profile.index') }}" class="active"><span class="title">Profiles</span></a></li>
-								<li><a href="{{ route('grupo.grupo.index') }}" class="active"><span class="title">Grupos</span></a></li>
-								<li><a href="{{ route('debitos.debitos.index') }}" class="active"><span class="title">Financeiro</span></a></li>
+								<li><a href="{{ route('index') }}" class="active"><span class="title">Últimas Faturas</span></a></li>
+								<li><a href="{{ route('meusDados') }}" class="active"><span class="title">Fatura aberta</span></a></li>
 
-
-
-								<li class="gui-folder">
-									<a href="javascript:void(0);">
-										<span class="title">Contacts</span>
-									</a>
-									<!--start submenu -->
-									<ul>
-										<li><a href="../../html/pages/contacts/search.html" ><span class="title">Search</span></a></li>
-										<li><a href="../../html/pages/contacts/details.html" ><span class="title">Contact card</span></a></li>
-										<li><a href="../../html/pages/contacts/add.html" ><span class="title">Insert contact</span></a></li>
-									</ul><!--end /submenu -->
-								</li><!--end /menu-li -->
 							</ul><!--end /submenu -->
 						</li><!--end /menu-li -->
 						<!-- END FORMS -->

@@ -2,10 +2,12 @@
 
 namespace Serbinario\Entities;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Test extends Model
+class Test extends Authenticatable
 {
+    use Notifiable;
     
 
     /**
@@ -29,8 +31,13 @@ class Test extends Model
      */
     protected $fillable = [
                   'name',
-                  'sports'
+                  'sports',
+                    'name',
+                    'email',
+        'password'
               ];
+
+
 
     /**
      * The attributes that should be mutated to dates.
@@ -45,28 +52,9 @@ class Test extends Model
      * @var array
      */
     protected $casts = [];
-    
 
-    /**
-     * Set the sports.
-     *
-     * @param  string  $value
-     * @return void
-     */
-    public function setSportsAttribute($value)
+    public function getAuthPassword()
     {
-        $this->attributes['sports'] = json_encode($value);
+        return $this->password;
     }
-
-    /**
-     * Get sports in array format
-     *
-     * @param  string  $value
-     * @return array
-     */
-    public function getSportsAttribute($value)
-    {
-        return json_decode($value) ?: [];
-    }
-
 }

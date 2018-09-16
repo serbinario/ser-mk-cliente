@@ -29,38 +29,88 @@
 
                 <div class="card">
                     <div class="card-head style-default-light">
-                        <header>Faturas Aberto</header>
+                        <header>Meus Dados</header>
                     </div>
                     <br>
                     <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body no-padding">
-                                <ul class="list divider-full-bleed">
 
-                                    <li class="tile">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <div class="default-bright">
-                                                    <div class="card-head text-center">VALOR</div>
+                        <!-- BEGIN CONTACTS COMMON DETAILS -->
+                        <div class="hbox-column col-md-12">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h4>Dados Pessoais</h4>
+                                    <br/>
+                                    <dl class="dl-horizontal dl-icon">
+                                        <dt><span class="fa fa-fw fa-user fa-lg opacity-50"></span></dt>
+                                        <dd>
+                                            <span class="opacity-50">Nome</span><br/>
+                                            <span class="text-medium">{{ $meusDados->nome }}</span>
+                                        </dd>
+                                        <dt><span class="fa fa-fw fa-gift fa-lg opacity-50"></span></dt>
+                                        <dd>
+                                            <span class="opacity-50">Aniversário</span><br/>
+                                            <span class="text-medium">{{ $meusDados->data_nascimento }}</span>
+                                        </dd>
+                                    </dl><!--end .dl-horizontal -->
+                                    <br/>
+                                    <h4>Dados de Contato</h4>
+                                    <br/>
+                                    <dl class="dl-horizontal dl-icon">
+                                        <dt><span class="fa fa-fw fa-mobile fa-lg opacity-50"></span></dt>
+                                        <dd>
+                                            <span class="opacity-50">Telefone</span><br/>
+                                            <span class="text-medium">{{ $meusDados->phone01 }}</span> &nbsp;<span class="opacity-50">Zap</span><br/>
+                                            <span class="text-medium">{{ $meusDados->phone02 }}</span> &nbsp;<span class="opacity-50">mobile</span>
+                                        </dd>
+                                        <dt><span class="fa fa-fw fa-envelope-square fa-lg opacity-50"></span></dt>
+                                        <dd>
+                                            <span class="opacity-50">Email</span><br/>
+                                            <a class="text-medium">{{ $meusDados->email }}</a>
+                                        </dd>
+                                        <dt><span class="fa fa-fw fa-location-arrow fa-lg opacity-50"></span></dt>
+                                        <dd>
+                                            <span class="opacity-50">Endereço</span><br/>
+                                            <span class="text-medium">
+														{{ $meusDados->logradouro }}<br/>
+                                                        {{ $meusDados->complemento }}<br/>
+                                                        <span class="opacity-50">Numero: </span> {{ $meusDados->numero_casa }}<br/>
+                                                        CEP: {{ $meusDados->cep }}<br/>
+                                                        {{ $meusDados->bairro }}
+                                            </span>
+                                        </dd>
 
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <div class="style-default-bright">
-                                                    <div class="card-head">VENCIMENTO</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <div class="style-default-bright">
-                                                    <div class="card-head">SATATUS</div>
-                                                </div>
-                                            </div>
-                                        </div><!--end .row -->
-                                    </li>
+                                        <br/>
+                                        <h4>Dados da Conta</h4>
+                                        <br/>
+                                        <dl class="dl-horizontal dl-icon">
+                                            <dt><span class="fa fa-fw fa-mobile fa-lg opacity-50"></span></dt>
+                                            <dd>
+                                                <span class="opacity-50">Login</span><br/>
+                                                <span class="text-medium">{{ $meusDados->login }}</span> &nbsp;<br/>
+                                            </dd>
+                                            <dt><span class="fa fa-fw fa-envelope-square fa-lg opacity-50"></span></dt>
+                                            <dd>
+                                                <span class="opacity-50">Nome do Plano</span><br/>
+                                                <a class="text-medium">{{ $meusDados->mkProfile->descricao }}</a>
+                                            </dd>
+                                            <dt><span class="fa fa-money fa-lg opacity-50"></span></dt>
+                                            <dd>
+                                                <span class="opacity-50">Velocidade Contratada</span><br/>
+                                                <span class="text-medium">
+														{{ $meusDados->mkProfile->nome }}<br/>
+                                                    <span class="opacity-50">Valor</span><br/>
+                                                <span class="text-medium">
+														{{ $meusDados->mkProfile->valor }}<br/>
 
-                                </ul>
-                            </div><!--end .card-body -->
-                        </div><!--end .card -->
+                                            </span>
+                                            </dd>
+                                    </dl><!--end .dl-horizontal -->
+
+
+                                </div><!--end .col -->
+                            </div><!--end .row -->
+                        </div><!--end .hbox-column -->
+                        <!-- END CONTACTS COMMON DETAILS -->
                     </div><!--end .col -->
 
                     <div class="col-md-12">
@@ -68,31 +118,7 @@
                             <div class="card-body no-padding">
                                 <ul class="list divider-full-bleed">
 
-                                    @foreach ($debitosPago as $debitoPago)
-                                        <a target="_blank" class="tile-content ink-reaction" href="{{ $debitoPago->link }}">
-                                            <li class="tile">
-                                                <div class="row">
-                                                    <div class="col-xs-4">
-                                                        <div class="default-bright">
-                                                            <div class="card-head text-center">R$ {{ $debitoPago->valor_debito }}</div>
 
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <div class="style-default-bright">
-                                                            <div class="card-head">{{ $debitoPago->data_vencimento }}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <div class="style-default-bright">
-                                                            <div class="card-head">{{ $debitoPago->status }}</div>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end .row -->
-                                            </li>
-                                        </a>
-
-                                    @endforeach
 
 
                                 </ul>
@@ -102,81 +128,6 @@
 
                 </div><!--end .card -->
 
-                <div class="card">
-                    <div class="card-head style-default-light">
-                        <header>Últimas Faturas</header>
-                    </div>
-
-                    <br>
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body no-padding">
-                                <ul class="list divider-full-bleed">
-
-                                    <li class="tile">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <div class="default-bright">
-                                                    <div class="card-head text-center">VALOR</div>
-
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <div class="style-default-bright">
-                                                    <div class="card-head">VENCIMENTO</div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <div class="style-default-bright">
-                                                    <div class="card-head">SATATUS</div>
-                                                </div>
-                                            </div>
-                                        </div><!--end .row -->
-                                    </li>
-
-                                </ul>
-                            </div><!--end .card-body -->
-                        </div><!--end .card -->
-                    </div><!--end .col -->
-
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-body no-padding">
-                                <ul class="list divider-full-bleed">
-
-                                    @foreach ($debitos as $debito)
-                                        <a target="_blank" class="tile-content ink-reaction" href="{{ $debito->link }}">
-                                            <li class="tile">
-                                                <div class="row">
-                                                    <div class="col-xs-4">
-                                                        <div class="default-bright">
-                                                            <div class="card-head text-center">R$ {{ $debito->valor_debito }}</div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <div class="style-default-bright">
-                                                            <div class="card-head">{{ $debito->data_vencimento }}</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-xs-4">
-                                                        <div class="style-default-bright">
-                                                            <div class="card-head">{{ $debito->status }}</div>
-                                                        </div>
-                                                    </div>
-                                                </div><!--end .row -->
-                                            </li>
-                                        </a>
-
-                                    @endforeach
-
-
-                                </ul>
-                            </div><!--end .card-body -->
-                        </div><!--end .card -->
-                    </div><!--end .col -->
-
-                </div><!--end .card -->
 
             </form>
         </div><!--end .col -->

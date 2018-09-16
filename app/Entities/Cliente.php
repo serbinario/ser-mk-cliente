@@ -2,10 +2,12 @@
 
 namespace Serbinario\Entities;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Cliente extends Model
+class Cliente extends Authenticatable
 {
+    use Notifiable;
 
     /**
      * Indicates if the model should be timestamped.
@@ -75,7 +77,17 @@ class Cliente extends Model
         'clienteable_id',
         'clienteable_type',
         'estado',
-        'numero_casa'
+        'numero_casa',
+        'password'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
     /**

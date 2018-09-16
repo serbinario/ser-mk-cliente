@@ -43,14 +43,13 @@ class Clientes extends Command
     {
         //$command = $this->argument('command');
 
-
-        //
+        //dd
         //$this->listaFaltantesMKClientes();
         // $this->importCobranca();
         //$this->importCsv();
         //$this->importCsvClientDrop();
         //$this->atualizaTabelaMKClientes();
-        $this->importSisClienteToMkClientes();
+        //$this->importSisClienteToMkClientes();
         //$this->importSisClienteToMkClientesFaltantes();
 
     }
@@ -165,13 +164,13 @@ class Clientes extends Command
     //Foi gerado com os campos cancelados, aguandando, pagos, etc......
     public function importCsv()
     {
-        $file = public_path('julho04.csv');
+        $file = public_path('Cobranca_01-09-05-09.csv');
 
         $customerArr = $this->csvToArray($file);
 
         for ($i = 0; $i < count($customerArr); $i ++)
         {
-            //dd($customerArr[$i]);
+            dd($customerArr[$i]);
             //dd($customerArr[$i]['valor'] );
             $customerArr[$i]['valor'] = str_replace(",", ".", $customerArr[$i]['valor']);
             //$customerArr[$i]['valor_pago'] = str_replace(",", ".", $customerArr[$i]['valor_pago']);
